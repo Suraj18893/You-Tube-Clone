@@ -41,9 +41,9 @@ import {
                 //       ? [...state.videos, ...payload.videos]
                 //       : payload.videos,
     
-                // loading: false,
+                
                 nextPageToken: payload.nextPageToken,
-                // activeCategory: payload.category,
+                activeCategory: payload.category,
              }
     
           case HOME_VIDEOS_FAIL:
