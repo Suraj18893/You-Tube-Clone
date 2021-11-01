@@ -3,7 +3,7 @@ import Header from "./Components/header/Header";
 import Sidebar from "./Components/sidebar/Sidebar";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
 import { Container } from "react-bootstrap";
-import "./_app.scss";
+import "./_app.scss";//
 import LoginScreen from "./screens/loginScreen/LoginScreen";
 import {
   Redirect,
