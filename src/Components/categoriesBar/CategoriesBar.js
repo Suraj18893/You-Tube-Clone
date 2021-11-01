@@ -24,7 +24,7 @@ const keywords = [
     'Real Madrid',
     'Gatsby',
     'Poor Coder',
-    'Shwetabh',
+    
  ]
 
 const CategoriesBar = () => {
