@@ -5,23 +5,28 @@ import "./_videoMetaData.scss";
 import { MdThumbUp, MdThumbDown } from "react-icons/md";
 import ShowMoreText from "react-show-more-text";
 
-const VideoMetaData = () => {
+const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
+  const { channelId, channelTitle, description, title, publishedAt } = snippet
+  const { viewCount, likeCount, dislikeCount } = statistics
+
+
+
   return (
     <div className="py-2 videoMetaData">
       <div className="videoMetaData__top">
-        <h5>Video Tittle</h5>
+        <h5>{title}</h5>
         <div className="py-1 d-flex justify-content-between align-items-center">
           <span>
-            {numeral(10000).format("0.a")} Views •
-            {moment("2020-11-02").fromNow()}
+            {numeral(viewCount).format("0.a")} Views •
+            {moment(publishedAt).fromNow()}
           </span>
 
           <div>
             <span className="mr-3">
-              <MdThumbUp size={26} /> {numeral(1000).format("0.a")} {"   "}
+              <MdThumbUp size={26} /> {numeral(likeCount).format("0.a")} {"   "}
             </span>
             <span className="mr-3">
-              <MdThumbDown size={26} /> {numeral(12).format("0.a")}
+              <MdThumbDown size={26} /> {numeral(dislikeCount).format("0.a")}
             </span>
           </div>
         </div>
@@ -34,7 +39,7 @@ const VideoMetaData = () => {
             className="mr-3 rounded-circle"
           />
           <div className="d-flex flex-column">
-            <span>Suraj Ganguly</span>
+            <span>{channelTitle}</span>
             <span> {numeral(100000000).format("0.a")} Subscribers</span>
           </div>
         </div>
@@ -48,16 +53,7 @@ const VideoMetaData = () => {
           anchorClass="showMoreText"
           expanded={false}
         >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore
-          deleniti, minima id vero ab quos illum magnam deserunt quibusdam,
-          repellat, odio enim autem. Excepturi illum laudantium modi obcaecati
-          consequatur perferendis numquam debitis saepe explicabo aliquam
-          tenetur dignissimos culpa maiores distinctio, sint fugiat eum nam ab
-          commodi laboriosam reprehenderit, eveniet voluptatum id. Lorem ipsum
-          dolor sit, amet consectetur adipisicing elit. Debitis sit consectetur
-          omnis totam tempore officiis corrupti tenetur unde officia perferendis
-          voluptate maxime nemo magni quaerat quam praesentium, optio, ad
-          accusantium, illo harum amet sunt.
+          {description}
         </ShowMoreText>
       </div>
     </div>
