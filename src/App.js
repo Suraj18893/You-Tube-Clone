@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import { useSelector } from "react-redux";
 import WatchScreen from "./screens/watchScreen/WatchScreen";
+import SearchScreen from "./screens/SearchScreen";
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
@@ -55,9 +56,9 @@ const App = () => {
         <LoginScreen />
       </Route>
 
-      <Route path="/search">
+      <Route path="/search/:query">
         <Layout>
-          <h1>Search Results</h1>
+          <SearchScreen/>
         </Layout>
       </Route>
 
