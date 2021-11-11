@@ -1,4 +1,4 @@
-@import "../../_base.scss";
+@import '../../_base.scss';
 
 .sidebar {
    background: $black-secondary;
@@ -10,9 +10,20 @@
    height: 90vh;
    padding-top: 2rem;
    transition: transform 0.2s ease-in;
+
    position: sticky;
    top: 10vh;
    left: 0;
+
+   a {
+      color: $text-color;
+      text-decoration: none;
+      &:hover {
+         color: $text-color;
+         text-decoration: none;
+      }
+   }
+
    li {
       display: flex;
       align-items: center;

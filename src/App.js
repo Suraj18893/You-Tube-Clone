@@ -5,15 +5,11 @@ import HomeScreen from "./screens/homeScreen/HomeScreen";
 import { Container } from "react-bootstrap";
 import "./_app.scss";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
-import {
-  Redirect,
-  Route,
-  Switch,
-  useHistory,
-} from "react-router-dom";
+import { Redirect, Route, Switch, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import WatchScreen from "./screens/watchScreen/WatchScreen";
 import SearchScreen from "./screens/SearchScreen";
+import SubscriptionsScreen from "./screens/subscriptionsScreen/SubscriptionsScreen";
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
@@ -58,15 +54,21 @@ const App = () => {
 
       <Route path="/search/:query">
         <Layout>
-          <SearchScreen/>
+          <SearchScreen />
         </Layout>
       </Route>
 
-      <Route path='/watch/:id'>
-            <Layout>
-               <WatchScreen />
-            </Layout>
-         </Route>
+      <Route path="/watch/:id">
+        <Layout>
+          <WatchScreen />
+        </Layout>
+      </Route>
+
+      <Route path="/feed/subscriptions">
+        <Layout>
+          <SubscriptionsScreen/>
+        </Layout>
+      </Route>
 
       <Route>
         <Redirect to="/" />
