@@ -13,7 +13,9 @@ import SubscriptionsScreen from "./screens/subscriptionsScreen/SubscriptionsScre
 import ChannelScreen from "./screens/channelScreen/ChannelScreen";
 
 const Layout = ({ children }) => {
-  
+  const [sidebar, toggleSidebar] = useState(false);
+
+  const handleToggleSidebar = () => toggleSidebar((value) => !value);
 
   return (
     <>
