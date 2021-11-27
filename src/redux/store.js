@@ -10,7 +10,7 @@ import { channelVideosReducer, homeVideosReducer, relatedVideoReducer, searchedV
 import { selectedVideoReducer } from "./reducers/videos.reducer";
 
 import { channelDetailsReducer } from "./reducers/channel.reducer";
-import { commentListReducer } from "./reducers/comments.reducer";
+
 
 const rootReducer = combineReducers({
   auth: authReducer,
