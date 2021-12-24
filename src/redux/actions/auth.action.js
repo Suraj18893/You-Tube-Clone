@@ -20,7 +20,7 @@ export const login = () => async (dispatch) => {
     const res = await auth.signInWithPopup(provider);
    
 
-    const accessToken = res.credential.accessToken;
+   
     const profile = {
       name: res.additionalUserInfo.profile.name,
       photoURL: res.additionalUserInfo.profile.picture,
