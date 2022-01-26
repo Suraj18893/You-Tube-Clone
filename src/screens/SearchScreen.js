@@ -7,7 +7,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import VideoHorizontal from "../Components/videoHorizontal/VideoHorizontal";
 
 const SearchScreen = () => {
-  const { query } = useParams();
+  
 
   const dispatch = useDispatch();
 
